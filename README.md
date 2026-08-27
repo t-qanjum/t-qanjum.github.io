@@ -1,5 +1,4 @@
-# Tasnim Anjum — QA Portfolio
-
+# Tasnim Anjum — QA Portfolio - https://t-qanjum.github.io/
 ## What this site showcases
 - Manual QA and test documentation
 - Functional, regression, exploratory and cross-browser testing
