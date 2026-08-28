@@ -1,153 +1,1409 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<meta name="description" content="Tasnim Anjum — Junior QA Tester portfolio featuring manual testing, defect reporting, cross-browser testing, API testing and test automation.">
-<meta name="theme-color" content="#0b1020">
-<title>Tasnim Anjum | QA Tester Portfolio</title>
-<style>
-:root{color-scheme:dark;--bg:#090e1b;--surface:#101827;--surface2:#151f32;--text:#edf2ff;--muted:#9da9c2;--accent:#7c8cff;--accent2:#5eead4;--danger:#ff7f8f;--line:#25324a;--shadow:0 18px 60px rgba(0,0,0,.28)}
-@media(prefers-color-scheme:light){body:not(.light){--bg:#f6f8fc;--surface:#fff;--surface2:#eef2ff;--text:#172033;--muted:#5d687d;--accent:#5968e8;--accent2:#087f71;--danger:#c33f55;--line:#dce2ee;--shadow:0 18px 55px rgba(33,47,79,.09);background:radial-gradient(circle at 82% 8%,#e6eaff 0,transparent 30%),var(--bg)}body:not(.light) nav{background:rgba(246,248,252,.82)}}
-body.light{color-scheme:light;--bg:#f6f8fc;--surface:#fff;--surface2:#eef2ff;--text:#172033;--muted:#5d687d;--accent:#5968e8;--accent2:#087f71;--danger:#c33f55;--line:#dce2ee;--shadow:0 18px 55px rgba(33,47,79,.09);background:radial-gradient(circle at 82% 8%,#e6eaff 0,transparent 30%),var(--bg)}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 82% 8%,#1c2856 0,transparent 30%),var(--bg);color:var(--text);line-height:1.65;transition:background .25s,color .25s}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-.container{width:min(1120px,92%);margin:auto}
-nav{position:sticky;top:0;z-index:50;background:rgba(4, 48, 158, 0.26);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
-.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.logo{font-weight:900;letter-spacing:.4px}.logo span{color:var(--accent)}
-.links{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:.92rem}.links a:hover{color:var(--text)}
-.theme-btn{border:1px solid var(--line);background:rgba(124,140,255,.08);color:var(--text);width:36px;height:36px;border-radius:10px;cursor:pointer}
-.hero{padding:92px 0 70px;display:grid;grid-template-columns:1.3fr .7fr;gap:55px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(124,140,255,.08);padding:7px 12px;border-radius:999px;color:#cbd2ff;font-size:.83rem;margin-bottom:20px}
-body.light .eyebrow{color:#4c58bd}.dot{width:7px;height:7px;background:var(--accent2);border-radius:50%;box-shadow:0 0 14px var(--accent2)}
-h1{font-size:clamp(3.1rem,7vw,6rem);line-height:.95;letter-spacing:-4px;margin-bottom:22px}.gradient{background:linear-gradient(100deg,#fff,#aeb8ff 55%,#5eead4);-webkit-background-clip:text;background-clip:text;color:transparent}
-body.light .gradient{background:linear-gradient(100deg,#172033,#929ae4 55%,#087f71);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-copy{font-size:1.14rem;color:var(--muted);max-width:690px}.hero-copy strong{color:var(--text)}
-.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:10px;border:1px solid var(--line);font-weight:750;transition:.2s;background:transparent}.btn:hover{transform:translateY(-2px);border-color:#566790}.btn.primary{background:var(--accent);border-color:var(--accent);color:#080d19}
-.hero-card{background:linear-gradient(145deg,rgba(124,140,255,.15),rgba(94,234,212,.04));border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:var(--shadow)}
-.badge{font-size:.75rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--accent2)}.hero-card h2{margin:8px 0 7px;font-size:1.35rem}.hero-card p{color:var(--muted)}
-.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}.stat{padding:14px;border:1px solid var(--line);background:rgba(0,0,0,.12);border-radius:13px}.stat b{font-size:1.35rem;display:block}.stat small{color:var(--muted)}
-section{padding:72px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}.kicker{color:var(--accent2);font-size:.78rem;font-weight:850;letter-spacing:1.5px;text-transform:uppercase}.section-head h2{font-size:2.25rem;line-height:1.1;margin-top:7px}.section-head>p{color:var(--muted);max-width:530px}
-.panel{background:rgba(16,24,39,.78);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}body.light .panel{background:rgba(255,255,255,.86)}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:20px}.panel p{color:var(--muted)}.panel p+p{margin-top:14px}
-.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tag{padding:7px 10px;border:1px solid var(--line);border-radius:8px;color:var(--text);background:rgba(124,140,255,.055);font-size:.84rem}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:22px}.metric strong{font-size:2rem;display:block}.metric span{font-size:.87rem;color:var(--muted)}
-.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:25px;min-height:355px;display:flex;flex-direction:column;transition:.25s}.project:hover{transform:translateY(-4px);border-color:#52638d;box-shadow:var(--shadow)}
-.project-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.project-icon{font-size:1.7rem}.status{font-size:.72rem;border:1px solid var(--line);padding:5px 8px;border-radius:999px;color:var(--accent2)}.project h3{font-size:1.32rem;margin:18px 0 7px}.project p{color:var(--muted)}.project ul{margin:15px 0 0 19px;color:var(--muted)}.project li{margin:3px 0}.project .buttons{margin-top:auto}
-.test-matrix{overflow-x:auto}.test-matrix table{width:100%;border-collapse:collapse;min-width:650px;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}.test-matrix th,.test-matrix td{padding:14px 15px;text-align:left;border-bottom:1px solid var(--line)}.test-matrix th{font-size:.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}.test-matrix td{font-size:.92rem}.pass{color:var(--accent2);font-weight:800}.defect{color:var(--danger);font-weight:800}
-.workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.step{position:relative;padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:15px}.step b{display:block;margin:5px 0}.step span{color:var(--muted);font-size:.83rem}.step-num{color:var(--accent2);font-weight:900}
-.timeline{border-left:1px solid var(--line);padding-left:28px}.job{position:relative;padding-bottom:22px}.job:last-child{padding-bottom:0}.job:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--accent);left:-34px;top:8px}.date{color:var(--accent2);font-size:.82rem;font-weight:800}.job h3{font-size:1.2rem;margin:4px 0}.job p{color:var(--muted)}
-.docs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.doc{padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:15px}.doc b{display:block;margin-bottom:5px}.doc span{color:var(--muted);font-size:.86rem}
-.contact{background:linear-gradient(135deg,rgba(124,140,255,.14),rgba(94,234,212,.05));border:1px solid var(--line);border-radius:24px;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:25px}.contact h2{font-size:2.1rem}.contact p{color:var(--muted);max-width:650px;margin-top:7px}
-footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:.86rem}.footer-inner{display:flex;justify-content:space-between;gap:15px}
-@media(max-width:850px){.links a{display:none}.hero,.about,.projects{grid-template-columns:1fr}.hero{padding-top:65px}.metrics{grid-template-columns:repeat(2,1fr)}.workflow{grid-template-columns:repeat(2,1fr)}.docs{grid-template-columns:repeat(2,1fr)}.contact{display:block}.contact .buttons{margin-top:20px}}
-@media(max-width:480px){h1{font-size:3.2rem}.metrics,.workflow,.docs{grid-template-columns:1fr}.section-head{display:block}.section-head>p{margin-top:12px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <meta name="description"
+    content="Tasnim Anjum — Junior QA Tester portfolio featuring manual testing, defect reporting, cross-browser testing, API testing and test automation." />
+  <meta name="theme-color" content="#0a0f1c" id="metaThemeColor" />
+  <title>Tasnim Anjum | QA Portfolio</title>
+  <style>
+    /* ---------- reset ---------- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ---------- theme tokens ---------- */
+    :root,
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #0a0f1c;
+      --bg-glow: #1c2856;
+      --surface: #111a2b;
+      --surface2: #16213a;
+      --text: #edf2ff;
+      --muted: #98a3bf;
+      --accent: #7c8cff;
+      --accent2: #4fd1c5;
+      --danger: #ff7a90;
+      --line: #25324a;
+      --nav-bg: rgba(10, 15, 28, 0.72);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --stat-bg: rgba(255, 255, 255, 0.04);
+    }
+
+    html[data-theme="light"] {
+      color-scheme: light;
+      --bg: #f6f8fc;
+      --bg-glow: #e3e8ff;
+      --surface: #ffffff;
+      --surface2: #eef1fb;
+      --text: #141a2c;
+      --muted: #57607a;
+      --accent: #4338ca;
+      --accent2: #0f766e;
+      --danger: #b91c1c;
+      --line: #e1e6f2;
+      --nav-bg: rgba(255, 255, 255, 0.78);
+      --shadow: 0 16px 44px rgba(30, 41, 59, 0.09);
+      --stat-bg: rgba(67, 56, 202, 0.045);
+    }
+
+    /* ---------- base ---------- */
+    body {
+      font-family:
+        "Inter",
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        sans-serif;
+      background:
+        radial-gradient(circle at 82% 8%, var(--bg-glow) 0, transparent 32%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    .mono {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+    }
+
+    /* skip link */
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -60px;
+      background: var(--accent);
+      color: #080d19;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      z-index: 200;
+      transition: top 0.2s;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    /* focus visibility */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    /* ---------- nav ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      font-family: "Manrope", sans-serif;
+      font-weight: 900;
+      letter-spacing: 0.4px;
+      font-size: 1.05rem;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .links a {
+      transition: color 0.2s;
+    }
+
+    .links a:hover {
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-btn {
+      border: 1px solid var(--line);
+      background: var(--stat-bg);
+      color: var(--text);
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--accent);
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .mobile-menu {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: var(--surface);
+        border-bottom: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .mobile-menu.open {
+        max-height: 360px;
+      }
+
+      .mobile-menu .container {
+        padding: 6px 0 18px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mobile-menu a {
+        padding: 13px 4px;
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+
+      .mobile-menu a:last-child {
+        border-bottom: none;
+      }
+
+      .mobile-menu a:hover {
+        color: var(--text);
+      }
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      padding: 88px 0 64px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      background: var(--stat-bg);
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: 0.83rem;
+      margin-bottom: 20px;
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent2);
+      border-radius: 50%;
+      box-shadow: 0 0 14px var(--accent2);
+    }
+
+    h1 {
+      font-family: "Manrope", sans-serif;
+      font-weight: 900;
+      font-size: clamp(2.6rem, 7vw, 5.6rem);
+      line-height: 0.98;
+      letter-spacing: -2.5px;
+      margin-bottom: 20px;
+    }
+
+    .gradient {
+      background: linear-gradient(100deg,
+          var(--text),
+          #aeb8ff 55%,
+          var(--accent2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    html[data-theme="light"] .gradient {
+      background: linear-gradient(100deg, #141a2c, #5b62c9 55%, #0f766e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      font-size: 1.12rem;
+      color: var(--muted);
+      max-width: 660px;
+    }
+
+    .hero-copy strong {
+      color: var(--text);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 17px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      font-weight: 700;
+      transition: 0.2s;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    html[data-theme="light"] .btn.primary {
+      color: #fff;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg,
+          rgba(124, 140, 255, 0.14),
+          rgba(79, 209, 197, 0.05));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .badge {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--accent2);
+    }
+
+    .hero-card h2 {
+      font-family: "Manrope", sans-serif;
+      margin: 9px 0 7px;
+      font-size: 1.3rem;
+    }
+
+    .hero-card p {
+      color: var(--muted);
+    }
+
+    .statgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: var(--stat-bg);
+      border-radius: 13px;
+    }
+
+    .stat b {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 1.35rem;
+      display: block;
+    }
+
+    .stat small {
+      color: var(--muted);
+    }
+
+    /* ---------- sections ---------- */
+    section {
+      padding: 66px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--accent2);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    .kicker i {
+      font-size: 0.68rem;
+    }
+
+    .section-head h2 {
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 3.2vw, 2.15rem);
+      line-height: 1.15;
+      margin-top: 8px;
+    }
+
+    .section-head>p {
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel p {
+      color: var(--muted);
+    }
+
+    .panel p+p {
+      margin-top: 14px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      background: var(--stat-bg);
+      font-size: 0.83rem;
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .metric strong {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 1.9rem;
+      display: block;
+    }
+
+    .metric span {
+      font-size: 0.87rem;
+      color: var(--muted);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+    }
+
+    .project {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 25px;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.25s;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .project-icon {
+      font-size: 1.6rem;
+    }
+
+    .status {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      border: 1px solid var(--line);
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--accent2);
+    }
+
+    .project h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.25rem;
+      margin: 16px 0 7px;
+    }
+
+    .project p {
+      color: var(--muted);
+    }
+
+    .project ul {
+      margin: 14px 0 0 19px;
+      color: var(--muted);
+    }
+
+    .project li {
+      margin: 3px 0;
+    }
+
+    .project .buttons {
+      margin-top: auto;
+      padding-top: 16px;
+    }
+
+    .test-matrix {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 16px;
+    }
+
+    .test-matrix table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .test-matrix th,
+    .test-matrix td {
+      padding: 14px 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .test-matrix tr:last-child td {
+      border-bottom: none;
+    }
+
+    .test-matrix th {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+    }
+
+    .test-matrix td {
+      font-size: 0.92rem;
+    }
+
+    .pass {
+      color: var(--accent2);
+      font-weight: 700;
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .defect {
+      color: var(--danger);
+      font-weight: 700;
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+    }
+
+    .step {
+      padding: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .step b {
+      font-family: "Manrope", sans-serif;
+      display: block;
+      margin: 6px 0;
+    }
+
+    .step span {
+      color: var(--muted);
+      font-size: 0.83rem;
+    }
+
+    .step-num {
+      color: var(--accent2);
+      font-weight: 700;
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .timeline {
+      border-left: 1px solid var(--line);
+      padding-left: 28px;
+    }
+
+    .job {
+      position: relative;
+      padding-bottom: 22px;
+    }
+
+    .job:last-child {
+      padding-bottom: 0;
+    }
+
+    .job:before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      left: -33.5px;
+      top: 8px;
+    }
+
+    .date {
+      color: var(--accent2);
+      font-size: 0.8rem;
+      font-weight: 700;
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .job h3 {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.15rem;
+      margin: 5px 0;
+    }
+
+    .job p {
+      color: var(--muted);
+    }
+
+    .docs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .doc {
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .doc b {
+      font-family: "Manrope", sans-serif;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .doc span {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .contact {
+      background: linear-gradient(135deg,
+          rgba(124, 140, 255, 0.13),
+          rgba(79, 209, 197, 0.05));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .contact h2 {
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .contact p {
+      color: var(--muted);
+      max-width: 620px;
+      margin-top: 7px;
+    }
+
+    .contact .buttons {
+      margin: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* ---------- scroll reveal ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------- responsive ---------- */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 56px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .contact {
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(680px, 90%);
+      }
+
+      section {
+        padding: 52px 0;
+      }
+
+      h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head>p {
+        margin-top: 10px;
+      }
+
+      .statgrid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .test-matrix th,
+      .test-matrix td {
+        padding: 11px 12px;
+        font-size: 0.85rem;
+      }
+
+      .contact {
+        padding: 26px;
+        text-align: left;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .buttons .btn {
+        flex: 1 1 auto;
+      }
+    }
+
+    /* ---------- motion & contrast preferences ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<nav><div class="container nav">
-<a class="logo" href="#top">Tasnim<span>.</span>QA</a>
-<div class="links">
-<a href="#about">About</a><a href="#projects">Projects</a><a href="#testing">Testing</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
-<button class="theme-btn" id="themeToggle" aria-label="Toggle light/dark theme">☀︎</button>
-</div></div></nav>
+  <a class="skip-link" href="#top">Skip to content</a>
 
-<main id="top">
-<section class="hero container">
-<div>
-<div class="eyebrow"><span class="dot"></span> Open to QA / SQA Entry Level Opportunities</div>
-<h1>Tasnim <span class="gradient">Anjum</span></h1>
-<p class="hero-copy"><strong>Aspiring QA Engineer</strong> with hands-on experience in manual, functional and cross-browser testing, test documentation and defect reporting — building toward QA automation.</p>
-<div class="buttons">
-<a class="btn primary" href="#projects">Explore QA Work</a>
-<a class="btn" href="https://github.com/t-qanjum" target="_blank" rel="noopener">GitHub ↗</a>
-<a class="btn" href="https://www.linkedin.com/in/tasnimanjum" target="_blank" rel="noopener">LinkedIn ↗</a>
-</div>
-</div>
-<div class="hero-card">
-<div class="badge">QA Snapshot</div><h2>Practical QA Projects</h2>
-<p>My portfolio is centered on test design, execution, measurable results and reproducible defects.</p>
-<div class="statgrid"><div class="stat"><b>118+</b><small>Manual test cases</small></div><div class="stat"><b>9</b><small>Defects documented</small></div><div class="stat"><b>3</b><small>Browsers tested</small></div><div class="stat"><b>95.9%</b><small>Demoblaze pass rate</small></div></div>
-</div>
-</section>
+  <nav>
+    <div class="container nav">
+      <a class="logo" href="#top">Tasnim<span>.</span>QA</a>
+      <div class="links">
+        <a href="#about">About</a><a href="#projects">Projects</a><a
+          href="#experience">Experience</a><a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Switch to light theme" aria-pressed="false">
+          ☀︎
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mobileMenu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="container">
+        <a href="#about">About</a><a href="#projects">Projects</a><a href="#testing">Testing</a><a
+          href="#experience">Experience</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-<section id="about"><div class="container">
-<div class="section-head"><div><div class="kicker">01 — Profile</div><h2>A QA mindset grounded in development.</h2></div></div>
-<div class="about">
-<div class="panel"><p>I'm a Computer Science & Engineering graduate building my career in Software Quality Assurance. My practical QA work covers test plan design, test case development, functional, regression, cross-browser and exploratory testing, plus API testing with Postman.</p><p>My Frontend Developer Intern experience adds a useful engineering perspective: JavaScript/React development, Agile collaboration, requirements review, GitHub and code reviews.</p></div>
-<div class="panel"><div class="badge">Core skills</div><div class="skills">
-<span class="tag">Manual Testing</span><span class="tag">Functional</span><span class="tag">Regression</span><span class="tag">Exploratory</span><span class="tag">Cross-browser</span><span class="tag">Test Plans</span><span class="tag">Test Cases</span><span class="tag">Bug Reporting</span><span class="tag">Postman</span><span class="tag">API Testing</span><span class="tag">Excel</span><span class="tag">Google Sheets</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">SDLC</span><span class="tag">STLC</span><span class="tag">Agile/Scrum</span><span class="tag">JavaScript</span><span class="tag">WebdriverIO</span>
-</div></div>
-</div></div></section>
+  <main id="top">
+    <section class="hero container">
+      <div>
+        <div class="buttons">
+          <div class="eyebrow">
+            <span class="dot"></span>
+            <a class="button" href="#contact">
+              Open to QA / SQA Entry Level Opportunities
+            </a>
+          </div>
+        </div>
+        <h1>Tasnim Anjum</h1>
+        <p class="hero-copy">
+          <strong>Aspiring QA Engineer</strong> with experience in manual,
+          functional and cross-browser testing, test documentation and defect
+          tracking — building toward QA automation.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="#projects">Explore QA Work</a>
+          <a class="btn" href="https://github.com/t-qanjum" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn" href="https://www.linkedin.com/in/tasnimanjum" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h2>Practical QA Projects</h2>
+        <p>
+          My portfolio is centered on test design, execution, measurable
+          results and reproducible defects.
+        </p>
+        <div class="statgrid">
+          <div class="stat">
+            <b class="count" data-target="118" data-suffix="+">0</b><small>Manual test cases</small>
+          </div>
+          <div class="stat">
+            <b class="count" data-target="9">0</b><small>Defects documented</small>
+          </div>
+          <div class="stat">
+            <b class="count" data-target="3">0</b><small>Browsers tested</small>
+          </div>
+          <div class="stat">
+            <b class="count" data-target="95.9" data-suffix="%" data-decimals="1">0%</b><small>Demoblaze pass
+              rate</small>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section><div class="container">
-<div class="section-head"><div><div class="kicker">02 — QA metrics</div><h2>My Testing Experience</h2></div></div>
-<div class="metrics"><div class="metric"><strong>73</strong><span>Demoblaze manual test cases</span></div><div class="metric"><strong>45</strong><span>SauceDemo manual test cases</span></div><div class="metric"><strong>9</strong><span>Documented reproducible defects</span></div><div class="metric"><strong>95.9%</strong><span>Demoblaze pass rate</span></div></div>
-</div></section>
+    <section id="about">
+      <div class="container reveal">
+        <div class="section-head">
+          <div>
+            <h2>About Me</h2>
+          </div>
+        </div>
+        <div class="about">
+          <div class="panel">
+            <p>
+              I'm a Computer Science &amp; Engineering graduate building my
+              career in Software Quality Assurance. My practical QA work
+              covers test plan design, test case development, functional,
+              regression, cross-browser and exploratory testing, plus API
+              testing with Postman.
+            </p>
+            <p>
+              My Frontend Developer Intern experience adds a useful
+              engineering perspective: JavaScript/React development, Agile
+              collaboration, requirements review, GitHub and code reviews.
+            </p>
+          </div>
+          <div class="panel">
+            <div class="badge">Core skills</div>
+            <div class="skills">
+              <span class="tag">Manual Testing</span><span class="tag">Functional</span><span
+                class="tag">Regression</span><span class="tag">Exploratory</span><span
+                class="tag">Cross-browser</span><span class="tag">Test Plans</span><span class="tag">Test
+                Cases</span><span class="tag">Bug Reporting</span><span class="tag">Postman</span><span class="tag">API
+                Testing</span><span class="tag">Excel</span><span class="tag">Google Sheets</span><span
+                class="tag">Git</span><span class="tag">GitHub</span><span class="tag">SDLC</span><span
+                class="tag">STLC</span><span class="tag">Agile/Scrum</span><span class="tag">JavaScript</span><span
+                class="tag">WebdriverIO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="projects"><div class="container">
-<div class="section-head"><div><div class="kicker">03 — Featured projects</div><h2>Testing projects</h2></div><p>Each project is presented around scope, test coverage, evidence and results — the way a QA portfolio should be evaluated.</p></div>
-<div class="projects">
-<article class="project"><div class="project-top"><div class="project-icon">🧪</div><span class="status">Manual QA</span></div><h3>Demoblaze QA Testing</h3><p>Manual & functional testing of a web shopping application.</p><ul><li>73 test cases across 6 modules</li><li>95.9% pass rate</li><li>3 defects reproduced and logged</li><li>Full test plan and execution report</li></ul><div class="skills"><span class="tag">Functional</span><span class="tag">Exploratory</span><span class="tag">Defect Reporting</span></div><div class="buttons"><a class="btn" href="https://github.com/t-qanjum/Demoblaze-Manual-QA-Testing" target="_blank" rel="noopener">View GitHub ↗</a></div></article>
-<article class="project"><div class="project-top"><div class="project-icon">🛒</div><span class="status">Manual QA</span></div><h3>SauceDemo QA Testing</h3><p>Manual testing of core e-commerce workflows with browser.</p><ul><li>45 test cases across 5 modules</li><li>Chrome, Firefox and Edge</li><li>Basic Android mobile compatibility</li><li>6 reproducible defects with evidence</li></ul><div class="skills"><span class="tag">Regression</span><span class="tag">Cross-browser</span><span class="tag">UI Testing</span></div><div class="buttons"><a class="btn" href="https://github.com/t-qanjum/SauceDemo-Manual-QA-Testing" target="_blank" rel="noopener">View GitHub ↗</a></div></article>
-<article class="project"><div class="project-top"><div class="project-icon">🤖</div><span class="status">Automation learning</span></div><h3>WebdriverIO Automation</h3><p>Practical UI automation learning using JavaScript and WebdriverIO. Exact automated scenarios and repository details will be linked once the project is published.</p><ul><li>Browser-based test automation</li><li>JavaScript test scripting</li><li>Assertions and test execution</li><li>Automation debugging practice</li></ul><div class="skills"><span class="tag">JavaScript</span><span class="tag">WebdriverIO</span><span class="tag">Node.js</span></div><div class="buttons"><a class="btn" href="https://github.com/t-qanjum/QA-Automation-Projects" target="_blank" rel="noopener">View GitHub ↗</a></div></article>
-<article class="project"><div class="project-top"><div class="project-icon">🔌</div><span class="status">API Basics</span></div><h3>API Testing with Postman</h3><p>API testing capability focused on request/response and endpoint validation.</p><ul><li>Request and response inspection</li><li>Endpoint validation</li><li>Positive and negative test thinking</li><li>Postman-based workflow</li></ul><div class="skills"><span class="tag">Postman</span><span class="tag">REST API</span><span class="tag">Validation</span></div></article>
-</div></div></section>
+    <section>
+      <div class="container reveal">
+        <div class="section-head">
+          <div>
+            <h2>Testing Metrics</h2>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <strong class="count" data-target="73">0</strong><span>Demoblaze manual test cases</span>
+          </div>
+          <div class="metric">
+            <strong class="count" data-target="45">0</strong><span>SauceDemo manual test cases</span>
+          </div>
+          <div class="metric">
+            <strong class="count" data-target="9">0</strong><span>Documented reproducible defects</span>
+          </div>
+          <div class="metric">
+            <strong class="count" data-target="95.9" data-suffix="%" data-decimals="1">0%</strong><span>Demoblaze pass
+              rate</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="testing"><div class="container">
-<div class="section-head"><div><div class="kicker">04 — QA process</div><h2>How I think about a test cycle.</h2></div><p>A simple view of the workflow behind my portfolio projects.</p></div>
-<div class="workflow">
-<div class="step"><span class="step-num">01</span><b>Understand</b><span>Review requirements, scope and risks.</span></div>
-<div class="step"><span class="step-num">02</span><b>Design</b><span>Create scenarios and structured test cases.</span></div>
-<div class="step"><span class="step-num">03</span><b>Execute</b><span>Run positive, negative and regression checks.</span></div>
-<div class="step"><span class="step-num">04</span><b>Report</b><span>Reproduce defects with clear evidence.</span></div>
-<div class="step"><span class="step-num">05</span><b>Verify</b><span>Retest fixes and communicate results.</span></div>
-</div></div></section>
+    <section id="projects">
+      <div class="container reveal">
+        <div class="section-head">
+          <div>
+            <div class="kicker"></div>
+            <h2>Testing projects</h2>
+          </div>
+        </div>
+        <div class="projects">
+          <article class="project">
+            <div class="project-top">
+              <span class="status">Manual QA</span>
+            </div>
+            <h3>Demoblaze QA Testing</h3>
+            <p>
+              Manual &amp; functional testing of a web shopping application.
+            </p>
+            <ul>
+              <li>73 test cases across 6 modules</li>
+              <li>95.9% pass rate</li>
+              <li>3 defects reproduced and logged</li>
+              <li>Full test plan and execution report</li>
+            </ul>
+            <div class="skills">
+              <span class="tag">Functional</span><span class="tag">Exploratory</span><span class="tag">Defect
+                Reporting</span>
+            </div>
+            <div class="buttons">
+              <a class="btn" href="https://github.com/t-qanjum/Demoblaze-Manual-QA-Testing" target="_blank"
+                rel="noopener">View GitHub ↗</a>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-top">
+              <span class="status">Manual QA</span>
+            </div>
+            <h3>SauceDemo QA Testing</h3>
+            <p>Manual testing of core e-commerce workflows with browser.</p>
+            <ul>
+              <li>45 test cases across 5 modules</li>
+              <li>Chrome, Firefox and Edge</li>
+              <li>Basic Android mobile compatibility</li>
+              <li>6 reproducible defects with evidence</li>
+            </ul>
+            <div class="skills">
+              <span class="tag">Regression</span><span class="tag">Cross-browser</span><span class="tag">UI
+                Testing</span>
+            </div>
+            <div class="buttons">
+              <a class="btn" href="https://github.com/t-qanjum/SauceDemo-Manual-QA-Testing" target="_blank"
+                rel="noopener">View GitHub ↗</a>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-top">
+              <span class="status">Automation learning</span>
+            </div>
+            <h3>WebdriverIO Automation</h3>
+            <p>
+              Practical UI automation learning using JavaScript and
+              WebdriverIO. Exact automated scenarios and repository details
+              will be linked once the project is published.
+            </p>
+            <ul>
+              <li>Browser-based test automation</li>
+              <li>JavaScript test scripting</li>
+              <li>Assertions and test execution</li>
+              <li>Automation debugging practice</li>
+            </ul>
+            <div class="skills">
+              <span class="tag">JavaScript</span><span class="tag">WebdriverIO</span><span class="tag">Node.js</span>
+            </div>
+            <div class="buttons">
+              <a class="btn" href="https://github.com/t-qanjum/QA-Automation-Projects" target="_blank"
+                rel="noopener">View GitHub ↗</a>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-top">
+              <span class="status">API Basics</span>
+            </div>
+            <h3>API Testing with Postman</h3>
+            <p>
+              API testing capability focused on request/response and endpoint
+              validation.
+            </p>
+            <ul>
+              <li>Request and response inspection</li>
+              <li>Endpoint validation</li>
+              <li>Positive and negative test thinking</li>
+              <li>Postman-based workflow</li>
+            </ul>
+            <div class="skills">
+              <span class="tag">Postman</span><span class="tag">REST API</span><span class="tag">Validation</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- 
+      <section id="testing">
+        <div class="container reveal">
+          <div class="section-head">
+            <div>
+              <h2>QA workflow</h2>
+            </div>
+          </div>
+          <div class="workflow">
+            <div class="step">
+              <span class="step-num">01</span><b>Understand</b
+              ><span>Review requirements, scope and risks.</span>
+            </div>
+            <div class="step">
+              <span class="step-num">02</span><b>Design</b
+              ><span>Create scenarios and structured test cases.</span>
+            </div>
+            <div class="step">
+              <span class="step-num">03</span><b>Execute</b
+              ><span>Run positive, negative and regression checks.</span>
+            </div>
+            <div class="step">
+              <span class="step-num">04</span><b>Report</b
+              ><span>Reproduce defects with clear evidence.</span>
+            </div>
+            <div class="step">
+              <span class="step-num">05</span><b>Verify</b
+              ><span>Retest fixes and communicate results.</span>
+            </div>
+          </div>
+        </div>
+      </section> -->
 
-<section><div class="container">
-<div class="section-head"><div><div class="kicker">05 — Test coverage</div><h2>Portfolio evidence</h2></div></div>
-<div class="test-matrix"><table><thead><tr><th>Area</th><th>Demoblaze</th><th>SauceDemo</th><th>Evidence</th></tr></thead><tbody>
-<tr><td>Manual test cases</td><td class="pass">73</td><td class="pass">45</td><td>Repositories</td></tr>
-<tr><td>Functional testing</td><td class="pass">Yes</td><td class="pass">Yes</td><td>Test cases</td></tr>
-<tr><td>Cross-browser</td><td class="pass">Chrome / Firefox / Edge</td><td class="pass">Chrome / Firefox / Edge</td><td>Execution results</td></tr>
-<tr><td>Mobile compatibility</td><td class="pass">Basic Android</td><td class="pass">Basic Android</td><td>Execution results</td></tr>
-<tr><td>Defects identified</td><td class="defect">3</td><td class="defect">6</td><td>Bug reports + evidence</td></tr>
-<tr><td>Test plan / execution report</td><td class="pass">Yes</td><td class="pass">Yes</td><td>GitHub</td></tr>
-</tbody></table></div>
-</div></section>
+    <section>
+      <div class="container reveal">
+        <div class="section-head">
+          <div>
+            <h2>Test Coverage</h2>
+          </div>
+        </div>
+        <div class="test-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>Demoblaze</th>
+                <th>SauceDemo</th>
+                <th>Evidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Manual test cases</td>
+                <td class="pass">73</td>
+                <td class="pass">45</td>
+                <td>Repositories</td>
+              </tr>
+              <tr>
+                <td>Functional testing</td>
+                <td class="pass">Yes</td>
+                <td class="pass">Yes</td>
+                <td>Test cases</td>
+              </tr>
+              <tr>
+                <td>Cross-browser</td>
+                <td class="pass">Chrome / Firefox / Edge</td>
+                <td class="pass">Chrome / Firefox / Edge</td>
+                <td>Execution results</td>
+              </tr>
+              <tr>
+                <td>Mobile compatibility</td>
+                <td class="pass">Basic Android</td>
+                <td class="pass">Basic Android</td>
+                <td>Execution results</td>
+              </tr>
+              <tr>
+                <td>Defects identified</td>
+                <td class="defect">3</td>
+                <td class="defect">6</td>
+                <td>Bug reports + evidence</td>
+              </tr>
+              <tr>
+                <td>Test plan / execution report</td>
+                <td class="pass">Yes</td>
+                <td class="pass">Yes</td>
+                <td>GitHub</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-<section id="experience"><div class="container">
-<div class="section-head"><div><div class="kicker">06 — Experience</div><h2>Engineering experience.</h2></div></div>
-<div class="panel timeline">
-<div class="job"><div class="date">JAN 2024 — JUL 2024</div><h3>Frontend Developer Intern · Eutropia IT</h3><p>Built and maintained UI features using JavaScript and React; collaborated in an Agile environment; reviewed UI features against requirements; flagged inconsistencies before release; used GitHub for version control and participated in code reviews.</p></div>
-<div class="job"><div class="date">2020 — 2024</div><h3>BSc in Computer Science & Engineering · University of Asia Pacific</h3><p>CGPA: 3.58 / 4.00 · Dhaka, Bangladesh</p></div>
-</div></div></section>
+    <section id="experience">
+      <div class="container reveal">
+        <div class="section-head">
+          <div>
+            <h2>Experience</h2>
+          </div>
+        </div>
+        <div class="panel timeline">
+          <div class="job">
+            <div class="date">JAN 2024 — JUL 2024</div>
+            <h3>Frontend Developer Intern · Eutropia IT</h3>
+            <p>
+              Built and maintained UI features using JavaScript and React;
+              collaborated in an Agile environment; reviewed UI features
+              against requirements; flagged inconsistencies before release;
+              used GitHub for version control and participated in code
+              reviews.
+            </p>
+          </div>
+          <div class="job">
+            <div class="date">2020 — 2024</div>
+            <h3>
+              BSc in Computer Science &amp; Engineering · University of Asia
+              Pacific
+            </h3>
+            <p>CGPA: 3.58 / 4.00 · Dhaka, Bangladesh</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section><div class="container">
-<div class="section-head"><div><div class="kicker">07 — Deliverables</div><h2>What a recruiter can inspect.</h2></div></div>
-<div class="docs"><div class="doc"><b>Test Plans</b><span>Scope, approach, environment and deliverables.</span></div><div class="doc"><b>Test Cases</b><span>Steps, expected results and execution status.</span></div><div class="doc"><b>Bug Reports</b><span>Reproduction steps, severity, priority and evidence.</span></div><div class="doc"><b>Execution Reports</b><span>Pass rate, results and testing summary.</span></div></div>
-</div></section>
+    <section id="contact">
+      <div class="container reveal">
+        <div class="contact">
+          <div>
+            <div class="kicker">Contact</div>
+            <h2>Let's build better software.</h2>
+            <p>
+              I'm looking for QA Intern and Junior QA opportunities where I
+              can contribute to real testing work and continue developing
+              toward automation.
+            </p>
+          </div>
+          <div class="buttons">
+            <a class="btn primary" href="mailto:tanjumtqa@gmail.com" aria-label="Email"><i
+                class="fas fa-envelope"></i></a>
+            <a class="btn" href="https://github.com/t-qanjum" target="_blank" rel="noopener" aria-label="GitHub"><i
+                class="fab fa-github"></i></a>
+            <a class="btn" href="https://www.linkedin.com/in/tasnimanjum" target="_blank" rel="noopener"
+              aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a class="btn" href="https://wa.me/8801631859973" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<section id="contact"><div class="container"><div class="contact">
-<div><div class="kicker">08 — Contact</div><h2>Let's build better software.</h2><p>I'm looking for QA Intern and Junior QA opportunities where I can contribute to real testing work and continue developing toward automation.</p></div>
-<div class="buttons"><a class="btn primary" href="mailto:tanjumtqa@gmail.com"><i class="fas fa-envelope"></i></a><a class="btn" href="https://github.com/t-qanjum" target="_blank" rel="noopener"><i class="fab fa-github"></i></a><a class="btn" href="https://www.linkedin.com/in/tasnimanjum" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a><a class="btn" href="https://wa.me/8801631859973" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a></div>
-</div></div></section>
-</main>
-<footer><div class="container footer-inner"><span>© 2026 Tasnim Anjum</span><span>QA · Manual Testing · Automation</span></div></footer>
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Tasnim Anjum</span><span>QA · Manual Testing · Automation</span>
+    </div>
+  </footer>
 
-<script>
-(function(){
- const body=document.body,btn=document.getElementById('themeToggle'),saved=localStorage.getItem('qa-theme');
- if(saved==='light')body.classList.add('light');
- function icon(){btn.textContent=body.classList.contains('light')?'☾':'☀︎'}
- icon();
- btn.addEventListener('click',()=>{body.classList.toggle('light');localStorage.setItem('qa-theme',body.classList.contains('light')?'light':'dark');icon()});
-})();
-</script>
+  <script>
+    (function () {
+      "use str.strict";
+
+      /* ---- theme ---- */
+      var root = document.documentElement;
+      var themeBtn = document.getElementById("themeToggle");
+      var metaTheme = document.getElementById("metaThemeColor");
+      var THEME_COLORS = { dark: "#0a0f1c", light: "#f6f8fc" };
+      var saved = localStorage.getItem("qa-theme");
+      var systemPrefersLight = window.matchMedia(
+        "(prefers-color-scheme: light)",
+      ).matches;
+      var initial = saved || (systemPrefersLight ? "light" : "dark");
+      applyTheme(initial);
+
+      function applyTheme(theme) {
+        root.setAttribute("data-theme", theme);
+        themeBtn.textContent = theme === "light" ? "☾" : "☀︎";
+        themeBtn.setAttribute(
+          "aria-label",
+          theme === "light"
+            ? "Switch to dark theme"
+            : "Switch to light theme",
+        );
+        themeBtn.setAttribute(
+          "aria-pressed",
+          theme === "light" ? "true" : "false",
+        );
+        if (metaTheme) metaTheme.setAttribute("content", THEME_COLORS[theme]);
+      }
+      themeBtn.addEventListener("click", function () {
+        var next =
+          root.getAttribute("data-theme") === "light" ? "dark" : "light";
+        applyTheme(next);
+        localStorage.setItem("qa-theme", next);
+      });
+
+      /* ---- mobile nav ---- */
+      var navToggle = document.getElementById("navToggle");
+      var mobileMenu = document.getElementById("mobileMenu");
+      function closeMenu() {
+        mobileMenu.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      }
+      function openMenu() {
+        mobileMenu.classList.add("open");
+        navToggle.setAttribute("aria-expanded", "true");
+        navToggle.innerHTML = '<i class="fas fa-xmark"></i>';
+      }
+      navToggle.addEventListener("click", function () {
+        mobileMenu.classList.contains("open") ? closeMenu() : openMenu();
+      });
+      mobileMenu.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", closeMenu);
+      });
+      document.addEventListener("click", function (e) {
+        if (!mobileMenu.classList.contains("open")) return;
+        if (mobileMenu.contains(e.target) || navToggle.contains(e.target))
+          return;
+        closeMenu();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeMenu();
+      });
+
+      /* ---- scroll reveal ---- */
+      var reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      var revealEls = document.querySelectorAll(".reveal");
+      if (reduceMotion || !("IntersectionObserver" in window)) {
+        revealEls.forEach(function (el) {
+          el.classList.add("in");
+        });
+      } else {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+        revealEls.forEach(function (el) {
+          io.observe(el);
+        });
+      }
+
+      /* ---- animated counters ---- */
+      var counters = document.querySelectorAll(".count");
+      function animateCount(el) {
+        var target = parseFloat(el.getAttribute("data-target"));
+        var suffix = el.getAttribute("data-suffix") || "";
+        var decimals = parseInt(el.getAttribute("data-decimals") || "0", 10);
+        if (reduceMotion) {
+          el.textContent = target.toFixed(decimals) + suffix;
+          return;
+        }
+        var duration = 1100,
+          start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var value = target * eased;
+          el.textContent = value.toFixed(decimals) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      if ("IntersectionObserver" in window) {
+        var countIo = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                animateCount(entry.target);
+                countIo.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.6 },
+        );
+        counters.forEach(function (el) {
+          countIo.observe(el);
+        });
+      } else {
+        counters.forEach(animateCount);
+      }
+    })();
+  </script>
 </body>
+
 </html>
